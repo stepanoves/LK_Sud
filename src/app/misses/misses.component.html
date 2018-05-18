@@ -1,0 +1,78 @@
+<div>
+  <tabset>
+    <tab heading="Неотработанные">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th>Дисциплина</th>
+          <th>Преподаватель</th>
+          <th>Тип</th>
+          <th>Дата</th>
+          <th>Количество часов</th>
+          <th>Стоимость(1 час)</th>
+          <th>Сумма</th>
+          <th>Оплачено</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of misses">
+          <td>{{data.discipline.name}}</td>
+          <td>
+            {{data.teacher.rank}}
+            {{data.teacher.surname}}
+            {{data.teacher.name}}
+            {{data.teacher.patronymic}}
+          </td>
+          <td>{{data.type}}</td>
+          <td>{{data.date}}</td>
+          <td>{{data.clock}}</td>
+          <td>{{data.price}}</td>
+          <td>{{data.priceSum}}</td>
+          <td>{{data.paidPrice}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </tab>
+    <tab heading="Отработанные">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th>Дисциплина</th>
+          <th>Преподаватель</th>
+          <th>Тип</th>
+          <th>Дата</th>
+          <th>Количество часов</th>
+          <th>Стоимость(1 час)</th>
+          <th>Сумма</th>
+          <th>Оплачено</th>
+          <th>Дата оплаты</th>
+          <th>Отработано</th>
+          <th>Дата отработки</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of workedMisses">
+          <td>{{data.discipline.name}}</td>
+          <td>
+            {{data.teacher.rank}}
+            {{data.teacher.surname}}
+            {{data.teacher.name}}
+            {{data.teacher.patronymic}}
+          </td>
+          <td>{{data.type}}</td>
+          <td>{{data.date}}</td>
+          <td>{{data.clock}}</td>
+          <td>{{data.price}}</td>
+          <td>{{data.priceSum}}</td>
+          <td>{{data.paidPrice}}</td>
+          <td>{{data.paymentDate}}</td>
+          <td>{{data.isWorked}}</td>
+          <td>{{data.workedDate}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </tab>
+  </tabset>
+</div>
+
+

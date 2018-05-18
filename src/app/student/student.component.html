@@ -1,0 +1,39 @@
+<div>
+  <tabset>
+    <tab heading="Личная информация">
+      {{student.surname}}
+      {{student.name}}
+      {{student.patronymic}}
+      <br><br>
+      Номер телефона: {{student.phone}}
+      <br><br>
+      Электронная почта: {{student.email}}
+    </tab>
+    <tab heading="Обучение">
+      Номер зачётной книжки: {{student.personalNumber}}
+      <br><br>
+      Факультет: {{student.faculty.name}}
+      <br><br>
+      Группа: {{student.group}}
+    </tab>
+    <tab heading="Адрес">
+      Область: {{student.region}}
+      <br><br>
+      Район: {{student.district}}
+      <br><br>
+      Населённый пункт: {{student.city}}
+      <br><br>
+      Улица/Проспект: {{student.street}}
+      <br><br>
+      Дом: {{student.houseNumber}}
+      <br><br>
+      Корпус: {{student.corps}}
+      <br><br>
+      Квартира: {{student.apartment}}
+      <br><br>
+      Почтовый индекс: {{student.addressIndex}}
+      <br><br>
+    </tab>
+  </tabset>
+</div>
+

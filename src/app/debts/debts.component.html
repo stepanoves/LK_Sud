@@ -1,0 +1,27 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>Номер семестра</th>
+    <th>Тип</th>
+    <th>Дисциплина</th>
+    <th>Оценка</th>
+    <th>Дата</th>
+    <th>Преподаватель</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of debts">
+    <td>{{data.semester}}</td>
+    <td>{{data.examType.name}}</td>
+    <td>{{data.discipline.name}}</td>
+    <td>{{data.mark}}</td>
+    <td>{{data.date}}</td>
+    <td>
+      {{data.teacher.rank}}
+      {{data.teacher.surname}}
+      {{data.teacher.name}}
+      {{data.teacher.patronymic}}
+    </td>
+  </tr>
+  </tbody>
+</table>

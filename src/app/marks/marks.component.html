@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>Номер семестра</th>
+    <th>Дисциплина</th>
+    <th>Оценка</th>
+    <th>Дата</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of marks">
+    <td>{{data.semesterNumber}}</td>
+    <td>{{data.discipline.name}}</td>
+    <td>{{data.mark}}</td>
+    <td>{{data.date}}</td>
+  </tr>
+  </tbody>
+</table>
