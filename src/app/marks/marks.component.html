@@ -1,7 +1,11 @@
+<br>
+<input class="form-control" placeholder="Введите название дисциплины..." [(ngModel)]="query" (ngModelChange)="change($event)">
+<br>
 <table class="table">
   <thead class="thead-dark">
   <tr>
-    <th>Номер семестра</th>
+    <th><input placeholder="Номер семестра..." [(ngModel)]="semQuery" (ngModelChange)="semNumber($event)"
+               (keypress)="numLimit($event)" pattern="\d{2}"></th>
     <th>Дисциплина</th>
     <th>Оценка</th>
     <th>Дата</th>

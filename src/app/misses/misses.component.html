@@ -1,5 +1,8 @@
 <div>
   <tabset>
+    <br>
+    <input class="form-control" placeholder="Поиск..." [(ngModel)]="query" (ngModelChange)="change($event)">
+    <br>
     <tab heading="Неотработанные">
       <table class="table">
         <thead class="thead-dark">

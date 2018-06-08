@@ -28,7 +28,7 @@ export class AuthComponent implements OnInit {
           this.token = data['token'];
           localStorage.setItem('token', JSON.stringify(this.token));
           this.error = undefined;
-          location.replace('/');
+          location.replace('/student');
         },
         error => { this.error = error; }
       );
