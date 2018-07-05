@@ -17,7 +17,7 @@ export class HttpStudentService {
   }
 
   getStudent() {
-    return this.http.get('http://86.57.182.101:8006/student', {
+    return this.http.get('http://localhost:8080/student', {
       headers: this.addHeaders(),
       withCredentials: true
     });

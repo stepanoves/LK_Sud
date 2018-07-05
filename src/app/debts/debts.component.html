@@ -1,23 +1,21 @@
 <br>
-<input class="form-control" placeholder="Введите название дисциплины..." [(ngModel)]="query" (ngModelChange)="change($event)">
-<br>
-<table class="table">
+<table class="table curs">
   <thead class="thead-dark">
-  <tr>
-    <th><input placeholder="Номер семестра..." [(ngModel)]="semQuery" (ngModelChange)="semNumber($event)"
-               (keypress)="numLimit($event)" pattern="\d{2}"></th>
+  <tr style="text-align: center;">
+    <th><input class="form-control" placeholder="Название дисциплины..." [(ngModel)]="query" (ngModelChange)="change($event)">
+    </th>
+    <th (click)="sortSem()"  style="cursor: pointer;">Номер семестра</th>
     <th>Тип</th>
-    <th>Дисциплина</th>
     <th>Оценка</th>
     <th>Дата</th>
     <th>Преподаватель</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of debts">
+  <tr *ngFor="let data of debts" style="text-align: center;">
+    <td>{{data.discipline.name}}</td>
     <td>{{data.semester}}</td>
     <td>{{data.examType.name}}</td>
-    <td>{{data.discipline.name}}</td>
     <td>{{data.mark}}</td>
     <td>{{data.date}}</td>
     <td>

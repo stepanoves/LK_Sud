@@ -10,8 +10,8 @@ import {HttpDebtsService} from './debts.service';
 export class DebtsComponent implements OnInit {
   debts: any;
   query: any;
-  semQuery: any;
   initialDebts: any;
+  isSorted: any;
 
   constructor(private httpService: HttpDebtsService) {
 
@@ -22,64 +22,33 @@ export class DebtsComponent implements OnInit {
     this.debts = this.initialDebts.filter((debt) => debt.discipline.name.toLowerCase().includes(this.query.toLowerCase()));
   }
 
-  semNumber(e) {
-    this.semQuery = e;
-    this.debts = this.initialDebts.filter((sem) => sem.semester.toString().includes(this.semQuery));
-  }
-
-  numLimit(e) {
-    if (e.keyCode < 48 || e.keyCode > 58) {
-      e.preventDefault();
+  compare(a, b) {
+    if (a.semester < b.semester) {
+      return -1;
+    } else
+    if (a.semester > b.semester) {
+      return 1;
+    } else {
+      return 0;
     }
   }
 
-  ngOnInit() {
-    this.initialDebts = [
-      {
-        'semester': 1,
-        'examType': {
-          'id': 1,
-          'name': 'Зачет',
-          'kind': 'зачет'
-        },
-        'discipline': {
-          'id': 679,
-          'name': 'Физика'
-        },
-        'mark': 'зачет',
-        'date': '2014-10-28',
-        'teacher': {
-          'id': 478,
-          'surname': 'Шилин',
-          'name': 'Александр',
-          'patronymic': 'Дмитриевич',
-          'rank': 'Доцент'
-        }
-      },
-      {
-        'semester': 2,
-        'examType': {
-          'id': 2,
-          'name': 'Экзамен',
-          'kind': 'экзамен'
-        },
-        'discipline': {
-          'id': 67,
-          'name': 'Высшая математика'
-        },
-        'mark': '4',
-        'date': '2014-10-29',
-        'teacher': {
-          'id': 124,
-          'surname': 'Дунина',
-          'name': 'Елена ',
-          'patronymic': 'Брониславовна',
-          'rank': 'Доцент'
-        }
-      }
-    ];
+  sortSem() {
+    if (!this.isSorted) {
+      this.debts = this.debts.sort(this.compare);
+      this.isSorted = true;
+    } else if (this.isSorted) {
+      this.debts = this.debts.reverse();
+      this.isSorted = false;
+    }
+  }
 
-    this.debts = this.initialDebts;
-    //this.httpService.getDebts().subscribe(data => this.debts = data);
+
+  ngOnInit() {
+    this.isSorted = false;
+    this.httpService.getDebts().subscribe(data => {
+      this.initialDebts = data;
+      this.debts = this.initialDebts;
+    });
   }
 }

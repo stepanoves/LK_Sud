@@ -17,14 +17,14 @@ export class HttpMissesService {
   }
 
   getMisses() {
-    return this.http.get('http://86.57.182.101:8006/student/misses', {
+    return this.http.get('http://localhost:8080/student/misses', {
       headers: this.addHeaders(),
       withCredentials: true
     });
   }
 
   getWorkedMisses() {
-    return this.http.get('http://86.57.182.101:8006/student/misses/worked', {
+    return this.http.get('http://localhost:8080/student/misses/worked', {
       headers: this.addHeaders(),
       withCredentials: true
     });

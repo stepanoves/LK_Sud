@@ -17,7 +17,7 @@ export class HttpDebtsService {
   }
 
   getDebts() {
-    return this.http.get('http://86.57.182.101:8006/student/debts', {
+    return this.http.get('http://localhost:8080/student/debts', {
       headers: this.addHeaders(),
       withCredentials: true
     });

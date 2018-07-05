@@ -1,13 +1,11 @@
 <div>
   <tabset>
     <br>
-    <input class="form-control" placeholder="Поиск..." [(ngModel)]="query" (ngModelChange)="change($event)">
-    <br>
     <tab heading="Неотработанные">
       <table class="table">
         <thead class="thead-dark">
-        <tr>
-          <th>Дисциплина</th>
+        <tr style="text-align: center;">
+          <th> <input class="form-control" placeholder="Название дисциплины..." [(ngModel)]="query" (ngModelChange)="change($event)"></th>
           <th>Преподаватель</th>
           <th>Тип</th>
           <th>Дата</th>
@@ -18,7 +16,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let data of misses">
+        <tr *ngFor="let data of misses" style="text-align: center;">
           <td>{{data.discipline.name}}</td>
           <td>
             {{data.teacher.rank}}
@@ -39,8 +37,8 @@
     <tab heading="Отработанные">
       <table class="table">
         <thead class="thead-dark">
-        <tr>
-          <th>Дисциплина</th>
+        <tr style="text-align: center;">
+          <th><input class="form-control" placeholder="Название дисциплины..." [(ngModel)]="query" (ngModelChange)="change($event)"></th>
           <th>Преподаватель</th>
           <th>Тип</th>
           <th>Дата</th>
@@ -54,7 +52,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let data of workedMisses">
+        <tr *ngFor="let data of workedMisses" style="text-align: center;">
           <td>{{data.discipline.name}}</td>
           <td>
             {{data.teacher.rank}}

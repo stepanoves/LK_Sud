@@ -1,38 +1,60 @@
 <div>
   <tabset>
     <tab heading="Личная информация">
-      {{student.surname}}
-      {{student.name}}
-      {{student.patronymic}}
-      <br><br>
-      Номер телефона: {{student.phone}}
-      <br><br>
-      Электронная почта: {{student.email}}
+      <ul class="list-group">
+        <li class="list-group-item">
+        {{student.surname}}
+        {{student.name}}
+        {{student.patronymic}}
+        </li>
+        <li class="list-group-item list-group-item-dark">
+        Номер телефона: {{student.phone}}
+        </li>
+        <li class="list-group-item">
+        Электронная почта: {{student.email}}
+        </li>
+      </ul>
     </tab>
     <tab heading="Обучение">
+      <ul class="list-group">
+        <li class="list-group-item">
       Номер зачётной книжки: {{student.personalNumber}}
-      <br><br>
+        </li>
+        <li class="list-group-item list-group-item-dark">
       Факультет: {{student.faculty.name}}
-      <br><br>
+      </li>
+        <li class="list-group-item">
       Группа: {{student.group}}
+      </li>
+      </ul>
     </tab>
     <tab heading="Адрес">
+      <ul class="list-group">
+        <li class="list-group-item">
       Область: {{student.region}}
-      <br><br>
+        </li>
+        <li class="list-group-item list-group-item-dark">
       Район: {{student.district}}
-      <br><br>
+      </li>
+        <li class="list-group-item">
       Населённый пункт: {{student.city}}
-      <br><br>
+      </li>
+        <li class="list-group-item list-group-item-dark">
       Улица/Проспект: {{student.street}}
-      <br><br>
+      </li>
+        <li class="list-group-item">
       Дом: {{student.houseNumber}}
-      <br><br>
+      </li>
+        <li class="list-group-item list-group-item-dark">
       Корпус: {{student.corps}}
-      <br><br>
+      </li>
+        <li class="list-group-item">
       Квартира: {{student.apartment}}
-      <br><br>
+      </li>
+        <li class="list-group-item list-group-item-dark">
       Почтовый индекс: {{student.addressIndex}}
-      <br><br>
+      </li>
+      </ul>
     </tab>
   </tabset>
 </div>

@@ -22,7 +22,7 @@ export class AuthComponent implements OnInit {
   }
 
   submit() {
-    this.http.get('http://86.57.182.101:5000/api/token/generate', {headers: this.addHeaders(), withCredentials: true})
+    this.http.get('http://abitpriv.vstu.by:8080/api/uaa/api/token/generate', {headers: this.addHeaders(), withCredentials: true})
       .subscribe(
         (data) => {
           this.token = data['token'];
