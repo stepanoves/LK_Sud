@@ -5,13 +5,16 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-import {AuthComponent} from "./authorization/auth.component";
+import {AuthComponent} from './authorization/auth.component';
 import {MarksComponent} from "./marks/marks.component";
 import {MissesComponent} from "./misses/misses.component";
 import {StudentComponent} from "./student/student.component";
 import {DebtsComponent} from "./debts/debts.component";
 import {TabsModule} from "ngx-bootstrap";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdditionalLinksComponent } from './additional-links/additional-links.component';
+import { MenuComponent } from './menu/menu.component';
+import { MailComponent } from './mail/mail.component';
 
 const appRoutes: Routes = [
   {path: 'auth', component: AuthComponent},
@@ -29,7 +32,10 @@ const appRoutes: Routes = [
     MarksComponent,
     MissesComponent,
     StudentComponent,
-    DebtsComponent
+    DebtsComponent,
+    AdditionalLinksComponent,
+    MenuComponent,
+    MailComponent
   ],
   imports: [
     BrowserModule,

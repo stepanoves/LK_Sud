@@ -9,7 +9,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) {}
-
   title = 'app';
   token = JSON.parse(localStorage.getItem('token'));
 
@@ -17,10 +16,5 @@ export class AppComponent implements OnInit {
     if (this.token === null) {
       this.router.navigate(['/auth']);
     }
-  }
-
-  logOut() {
-    localStorage.removeItem('token');
-    location.replace('/');
   }
 }
